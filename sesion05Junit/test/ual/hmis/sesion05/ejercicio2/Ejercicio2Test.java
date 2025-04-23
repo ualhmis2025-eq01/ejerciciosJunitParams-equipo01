@@ -13,6 +13,7 @@ class Ejercicio2Test {
 	@CsvSource({
 		"user,pass,true",
 		"'',pass,false",
+		"'','',false",
 		"user,'',false",
 		"nombredeusuariossuperlagruisimomayorde30caraceteres,pass,false",
 		"user,unsuperpasswordlarguisimoconmasde30caracteresgigantedelto,false",
