@@ -9,9 +9,14 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ContadorDePalabras {
-    private static final String archivo = "src/ual/hmis/sesion05/archivo.txt";
-    
-      public List<String> palabrasOrdenadasAlfabeticamente() throws IOException {
+    private String archivo = "src/ual/hmis/sesion05/archivo.txt";
+
+    public ContadorDePalabras(String archivo) {
+        this.archivo = archivo;
+        
+    }
+
+    public List<String> palabrasOrdenadasAlfabeticamente() throws IOException {
         List<String> palabras = leerArchivo();
         palabras.sort(String::compareToIgnoreCase);
         return palabras;
