@@ -1,4 +1,4 @@
-package ual.hmis;
+package ual.hmis.sesion05.ejercicio4;
 
 import java.util.Arrays;
 
@@ -6,9 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import ual.hmis.sesion05.MezclaLineal;
 
-public class MezclaLinealTest {
+public class Ejercicio4Test {
 
     @ParameterizedTest
     @CsvSource({
@@ -27,7 +26,7 @@ public class MezclaLinealTest {
         int[] arr2 = parseArray(arr2Str);
         int[] expected = parseArray(expectedStr);
 
-        MezclaLineal mezcla = new MezclaLineal(arr1, arr2);
+        Ejercicio4 mezcla = new Ejercicio4(arr1, arr2);
         int[] resultado = mezcla.mezcla();
 
         assertArrayEquals(expected, resultado, "La mezcla no es correcta.");
