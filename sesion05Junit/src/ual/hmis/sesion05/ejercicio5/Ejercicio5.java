@@ -24,7 +24,7 @@ public class Ejercicio5 {
                 Collections.addAll(result, temp);
             }
         } catch (IOException e) {
-            return e.getMessage().contains("NoSuchFileException") ? null : result;
+            return null;
         }
     
         result.sort(String::compareTo);
@@ -46,7 +46,7 @@ public class Ejercicio5 {
                 }
             }
         } catch (IOException e) {
-            return e.getMessage().contains("NoSuchFileException") ? null : new ArrayList<>();
+            return null;
         }
 
         ArrayList<Pair<String, Integer>> result = new ArrayList<>();
