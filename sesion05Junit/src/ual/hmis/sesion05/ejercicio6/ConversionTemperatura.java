@@ -22,23 +22,19 @@ public class ConversionTemperatura {
 		fromUnit = fromUnit.toLowerCase();
 	    toUnit = toUnit.toLowerCase();
 	    
-	    if(fromUnit.equals(toUnit)) return temperature;
-		
-	    if(fromUnit.equals("celsius")) {
-	    	if(toUnit.equals("fahrenheit")) return convertTemperatureCelsiusFahrenheit(temperature);
-	    	if(toUnit.equals("kelvin")) return convertTemperatureCelsiusKelvin(temperature);
-	    }
-	    
-	    if(fromUnit.equals("kelvin")) {
-	    	if(toUnit.equals("fahrenheit")) return convertTemperatureKelvinFahrenheit(temperature);
-	    	if(toUnit.equals("celsius")) return convertTemperatureKelvinCelsius(temperature);
-	    }
-	    
-	    if(fromUnit.equals("fahrenheit")) {
-	    	if(toUnit.equals("kelvin")) return convertTemperatureFahrenheitKelvin(temperature);
-	    	if(toUnit.equals("celsius")) return convertTemperatureFahrenheitCelsius(temperature);
-	    }
-	    
+	    if (fromUnit.equals("celsius")) {
+        if (toUnit.equals("fahrenheit")) return convertTemperatureCelsiusFahrenheit(temperature);
+        if (toUnit.equals("kelvin")) return convertTemperatureCelsiusKelvin(temperature);
+        if (toUnit.equals("celsius")) return (temperature >= -273.15) ? temperature : Double.NaN;
+    } else if (fromUnit.equals("kelvin")) {
+        if (toUnit.equals("fahrenheit")) return convertTemperatureKelvinFahrenheit(temperature);
+        if (toUnit.equals("celsius")) return convertTemperatureKelvinCelsius(temperature);
+        if (toUnit.equals("kelvin")) return (temperature >= 0) ? temperature : Double.NaN;
+    } else if (fromUnit.equals("fahrenheit")) {
+        if (toUnit.equals("kelvin")) return convertTemperatureFahrenheitKelvin(temperature);
+        if (toUnit.equals("celsius")) return convertTemperatureFahrenheitCelsius(temperature);
+        if (toUnit.equals("fahrenheit")) return (temperature >= -459.67) ? temperature : Double.NaN;
+		}
 	    return Double.NaN;
 	}
 	
