@@ -1,5 +1,10 @@
 package ual.hmis.sesion05.ejercicio6;
 
+/**
+ * Class ConversionTemperatura
+ * 
+ * Class designed to convert temperature to different units. 
+ */
 public class ConversionTemperatura {
 
 	/**
@@ -20,18 +25,18 @@ public class ConversionTemperatura {
 	    if(fromUnit.equals(toUnit)) return temperature;
 		
 	    if(fromUnit.equals("celsius")) {
-	    	if(fromUnit.equals("fahrenheit")) return convertTemperatureCelsiusFahrenheit(temperature);
-	    	if(fromUnit.equals("kelvin")) return convertTemperatureCelsiusKelvin(temperature);
+	    	if(toUnit.equals("fahrenheit")) return convertTemperatureCelsiusFahrenheit(temperature);
+	    	if(toUnit.equals("kelvin")) return convertTemperatureCelsiusKelvin(temperature);
 	    }
 	    
 	    if(fromUnit.equals("kelvin")) {
-	    	if(fromUnit.equals("fahrenheit")) return convertTemperatureKelvinFahrenheit(temperature);
-	    	if(fromUnit.equals("celsius")) return convertTemperatureKelvinCelsius(temperature);
+	    	if(toUnit.equals("fahrenheit")) return convertTemperatureKelvinFahrenheit(temperature);
+	    	if(toUnit.equals("celsius")) return convertTemperatureKelvinCelsius(temperature);
 	    }
 	    
 	    if(fromUnit.equals("fahrenheit")) {
-	    	if(fromUnit.equals("kelvin")) return convertTemperatureKelvinFahrenheit(temperature);
-	    	if(fromUnit.equals("celsius")) return convertTemperatureKelvinCelsius(temperature);
+	    	if(toUnit.equals("kelvin")) return convertTemperatureFahrenheitKelvin(temperature);
+	    	if(toUnit.equals("celsius")) return convertTemperatureFahrenheitCelsius(temperature);
 	    }
 	    
 	    return Double.NaN;
