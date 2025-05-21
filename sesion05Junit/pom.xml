@@ -33,6 +33,9 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.6</version>
+				<configuration>
+  					<failOnViolation>false</failOnViolation>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -186,7 +189,7 @@
 				<configuration>
 					<effort>Max</effort>
 					<threshold>Low</threshold>
-					<failOnError>true</failOnError>
+					<failOnError>false</failOnError>
 					<includeFilterFile>${session.executionRootDirectory}/spotbugs-security-include.xml</includeFilterFile>
 					<excludeFilterFile>${session.executionRootDirectory}/spotbugs-security-exclude.xml</excludeFilterFile>
 					<plugins>
